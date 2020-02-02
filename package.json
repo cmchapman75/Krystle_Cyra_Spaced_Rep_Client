@@ -34,5 +34,17 @@
     "cypress": "^3.2.0",
     "jsonwebtoken": "^8.5.0",
     "unfetch": "^4.1.0"
-  }
+  },
+  "description": "To setup the application",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thinkful-Ed/spaced-repetition.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thinkful-Ed/spaced-repetition/issues"
+  },
+  "homepage": "https://github.com/Thinkful-Ed/spaced-repetition#readme"
 }
