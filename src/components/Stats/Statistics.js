@@ -1,5 +1,5 @@
 import React from 'react';
-import './Stastics.css';
+import './Statistics.css';
 
 
 class Stats extends React.Component {
