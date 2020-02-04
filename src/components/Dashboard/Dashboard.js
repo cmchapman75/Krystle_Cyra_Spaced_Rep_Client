@@ -37,7 +37,7 @@ class Dashboard extends Component {
             </div>
             <div className='counts'>Correct / Incorrect counts
                 <ul>
-                {this.props.content.words.map((words, index) => {
+                {this.props.content.words.map((word, index) => {
                     return(
                       <li key={index}>
                         {word.correct_count} / {word.incorrect_count}
