@@ -1,0 +1,46 @@
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:  center;
+    align-content: center;
+}
+
+.infoArea {
+    border: 3px solid coral;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.wordsHolder {
+     width: 100%;
+     border-top: 3px solid coral;
+     width: 60 vw;
+     height: 50vh;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+
+.infoHeader {
+    text-align: center;
+}
+
+.words {
+    border-right: 3px solid coral;
+    min-width: 50%;
+    max-width: 50%;
+}
+
+.count {
+    width: 50%;
+}
+
+.button {
+    margin-bottom:  20px;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
