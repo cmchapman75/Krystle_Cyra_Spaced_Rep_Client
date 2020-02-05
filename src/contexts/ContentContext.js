@@ -1,7 +1,7 @@
 import React from 'react';
 import config from '../config';
 import TokenService from '../services/token-service';
-import LangService from '../services/lang-api-service';
+import LangService from '../services/language-api-service';
 
 const ContentContext = React.createContext({
   error: null,
