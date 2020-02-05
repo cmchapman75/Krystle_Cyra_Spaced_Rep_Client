@@ -11,6 +11,14 @@ class DashboardRoute extends Component {
        Total correct answers: 7
        <a href="/learn">Start practicing</a>
        <h3 className="wordHeader">Words to practice</h3>
+       <ul>
+        <li>
+          <h4>original 1</h4>
+          correct answer count: 0
+          incorrect answer count: 0
+        </li>
+       
+        </ul>
         {/* <Dashboard content={this.props.content} user={this.props.user}/>
         <Stats score={this.props.content.language.total_score}/> */}
       </section>
