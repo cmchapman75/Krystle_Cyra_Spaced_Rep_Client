@@ -9,6 +9,7 @@ class LearningRoute extends Component {
        <p>Your total score is: 999</p>
       <form></form>
       <main>You have answered this word correctly 222 times.
+      You have answered this word incorrectly 333 times.
       </main>
       <label for="learn-guess-input">What's the translation for this word? </label>
       </section>
