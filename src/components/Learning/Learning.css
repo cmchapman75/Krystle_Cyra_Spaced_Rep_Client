@@ -8,23 +8,6 @@
   border: 1.5em solid coral;
 }
 
-.learn-page h3 {
-  min-width: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: #fff;
-  border-bottom: none;
-  opacity: 1;
-  transition: all 1s;
-}
 
 .learn-page h2 {
   margin: 0 0 0.5em 0;
