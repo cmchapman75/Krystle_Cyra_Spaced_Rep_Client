@@ -33,6 +33,7 @@ class Dashboard extends React.Component {
  static contextType = ContentContext
 
   render(){
+    console.log(this.context)
     return(
       <div className="dashboardContainer">
 

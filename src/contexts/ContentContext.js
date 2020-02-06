@@ -7,6 +7,12 @@ const ContentContext = React.createContext({
   error: null,
   language: {},
   words: [],
+  head: {},
+  feedbackRes: {},
+  nextWord: () => {},
+  feedback: null,
+  guess: '',
+  setGuess: () => {}
 })
 
 export default ContentContext;
@@ -26,12 +32,49 @@ export class ContentProvider extends React.Component {
         total_score: 0
       },
       words: [],
-      head: {}
+      head: {},
+      feedbackRes: {
+        nextWord: '',
+        wordCorrectCount: 0,
+        wordIncorrectCount: 0,
+        totalScore: 0,
+        answer: '',
+        isCorrect: false,
+        guess: '',
+        setGuess: () => {}
+    },
+      nextWord: this.nextWord,
+      giveFeedback: this.giveFeedback,
+      setFeedback: () => {},
+      feedback: false
     } 
   }
 
   componentDidMount() {
     this.setContext();
+  }
+
+  giveFeedback = () => {
+    this.setState({feedback: true})
+  }
+
+  nextWord = () => {
+    this.setState({
+      head: {
+        nextWord: this.state.feedbackRes.nextWord,
+        totalScore: this.state.feedbackRes.totalScore,
+        wordCorrectCount: this.state.feedbackRes.wordCorrectCount,
+        wordIncorrectCount: this.state.feedbackRes.wordIncorrectCount
+      },
+      feedback:false
+    }
+    )
+  }
+
+  setGuess = (guess) => {
+    this.setState({
+      guess: guess
+    })
   }
 
   setContext = () => {
@@ -43,7 +86,13 @@ export class ContentProvider extends React.Component {
     LangService.getHead().then((resData) => this.setState({
       head: resData
     }))
-  }  
+  } 
+  
+  setFeedback = (resData) => {
+    this.setState({
+      feedbackRes: resData
+    })
+  }
 
   getLanguage = () => {
     return fetch(`${config.API_ENDPOINT}/language`, {
@@ -62,7 +111,14 @@ export class ContentProvider extends React.Component {
       error: this.state.error,
       language: this.state.language,
       words: this.state.words,
-      head: this.state.head
+      head: this.state.head,
+      nextWord: this.state.nextWord,
+      giveFeedback: this.state.giveFeedback,
+      feedbackRes: this.state.feedbackRes,
+      setFeedback: this.setFeedback,
+      feedback: this.state.feedback,
+      guess: this.state.guess,
+      setGuess: this.setGuess
     }
     return (
       <ContentContext.Provider value={content}>
@@ -71,3 +127,6 @@ export class ContentProvider extends React.Component {
     )
   }
 }
+
+
+
