@@ -12,9 +12,7 @@ class LearningRoute extends Component {
       <main>You have answered this word correctly 222 times.
       You have answered this word incorrectly 333 times.
       </main>
-      <label for="learn-guess-input">What's the translation for this word? </label> */}
-
-      <Learning content={this.props.content} user={this.props.user}/>
+      <label>What's the translation for this word? </label>
       </section>
 
     );
