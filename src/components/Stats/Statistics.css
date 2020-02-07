@@ -1,6 +1,6 @@
 .stats {
     width: 100vw;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     border-top: 3px groove white;

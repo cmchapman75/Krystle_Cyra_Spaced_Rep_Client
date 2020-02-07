@@ -1,7 +1,7 @@
 import React from 'react'
 import Stats from '../Stats/Statistics'
 import ContentContext from '../../contexts/ContentContext';
-import LangService from '../../services/lang-api-service';
+import LangService from '../../services/language-api-service';
 import Feedback from '../Feedback/Feedback'
 import './Learning.css'
 
