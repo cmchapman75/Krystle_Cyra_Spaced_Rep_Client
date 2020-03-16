@@ -7,12 +7,15 @@ const ContentContext = React.createContext({
   error: null,
   language: {},
   words: [],
+  setContext: () => {},
   head: {},
+  getHead: () => {},
   feedbackRes: {},
   nextWord: () => {},
   feedback: null,
   guess: '',
-  setGuess: () => {}
+  setGuess: () => {},
+  feedbackFalse: () => {},
 })
 
 export default ContentContext;
@@ -31,8 +34,10 @@ export class ContentProvider extends React.Component {
         head: 1,
         total_score: 0
       },
+      setContext: () => {},
       words: [],
       head: {},
+      getHead: () => {},
       feedbackRes: {
         nextWord: '',
         wordCorrectCount: 0,
@@ -46,13 +51,14 @@ export class ContentProvider extends React.Component {
       nextWord: this.nextWord,
       giveFeedback: this.giveFeedback,
       setFeedback: () => {},
-      feedback: false
+      feedback: false,
+      feedbackFalse: () => {},
     } 
   }
 
-  componentDidMount() {
-    this.setContext();
-  }
+  // componentDidMount() {
+  //   this.setContext();
+  // }
 
   giveFeedback = () => {
     this.setState({feedback: true})
@@ -71,21 +77,34 @@ export class ContentProvider extends React.Component {
     )
   }
 
+  getHead = () => {
+    LangService.getHead().then((resData) => {
+      this.setState({
+        head: resData
+      })
+    });
+  }
+
   setGuess = (guess) => {
     this.setState({
       guess: guess
     })
   }
 
-  setContext = () => {
-    this.getLanguage().then((resData) => this.setState({
+  feedbackFalse = () => {
+    this.setState({
+      feedback: false
+    })
+  }
+
+  setContext = async () => {
+    await this.getLanguage().then((resData) => this.setState({
       error: null,
       language: resData.language,
       words: resData.words
     }));
-    LangService.getHead().then((resData) => this.setState({
-      head: resData
-    }))
+    this.getHead();
+    
   } 
   
   setFeedback = (resData) => {
@@ -112,13 +131,16 @@ export class ContentProvider extends React.Component {
       language: this.state.language,
       words: this.state.words,
       head: this.state.head,
+      setContext: this.setState,
+      getHead: this.getHead,
       nextWord: this.state.nextWord,
       giveFeedback: this.state.giveFeedback,
       feedbackRes: this.state.feedbackRes,
       setFeedback: this.setFeedback,
       feedback: this.state.feedback,
       guess: this.state.guess,
-      setGuess: this.setGuess
+      setGuess: this.setGuess,
+      feedbackFalse: this.feedbackFalse,
     }
     return (
       <ContentContext.Provider value={content}>

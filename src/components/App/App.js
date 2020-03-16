@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
+import Footer from './Footer/Footer'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute'
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute'
@@ -25,8 +26,11 @@ export default class App extends Component {
         <Header />
         <main>
           {hasError && (
-            <p>There was an error! Oh no!</p>
+            <div className="error">
+              <p>There was an error! Oh no!</p>
+            </div>
           )}
+
           <Switch>
             <PrivateRoute
               exact
@@ -50,6 +54,7 @@ export default class App extends Component {
             />
           </Switch>
         </main>
+        <Footer />
       </div>
     );
   }
