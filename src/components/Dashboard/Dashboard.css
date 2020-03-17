@@ -1,0 +1,74 @@
+
+
+.dashboardContainer button {
+    margin-bottom: 20px;
+  }
+  
+  .dashboardContainer h2 {
+    text-align: center;
+  }
+  
+  .infoArea {
+    border: 3px solid white;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.4);
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .infoHeader {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .infoHeader h3{
+    text-align: center;
+    height: 100%;
+  }
+  
+  .wordsHolder {
+    border-top: 3px solid white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: scroll;
+  }
+  
+  .words {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  .words h4 {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 8px;
+  }
+  
+  .words ul {
+    margin: 0px;
+    padding: 0px;
+  }
+  .words li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+  
+  button {
+    margin-bottom: 20px;
+  }
+  
+  li {
+    text-decoration: none;
+    list-style: none;
+  }

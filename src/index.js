@@ -12,7 +12,7 @@ import * as serviceWorker from './serviceWorker'
 ReactDOM.render(
   <BrowserRouter>
     <UserProvider>
-    <ContentProvider>
+      <ContentProvider>
         <div className="o o1"></div>
         <div className="o o2"></div>
         <div className="o o3"></div>

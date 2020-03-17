@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LoginForm from '../../components/LoginForm/LoginForm'
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 class LoginRoute extends Component {
   static defaultProps = {
@@ -13,11 +13,12 @@ class LoginRoute extends Component {
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/'
     history.push(destination)
+    
   }
 
   render() {
     return (
-      <section>
+      <section className="viewport">
         <h2>Login</h2>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}

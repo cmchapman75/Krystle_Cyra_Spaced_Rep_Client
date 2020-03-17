@@ -1,7 +1,6 @@
 import React from 'react'
-import Stats from '../Stats/Statistics'
 import ContentContext from '../../contexts/ContentContext';
-import LangService from '../../services/language-api-service';
+import LangService from '../../services/lang-api-service';
 import Feedback from '../Feedback/Feedback'
 import './Learning.css'
 
@@ -17,17 +16,18 @@ class Learning extends React.Component {
 
   static contextType = ContentContext;
 
-  handleSubmit = (ev) => {
+  componentDidMount() {
+    this.context.getHead();
+  }
+
+  handleSubmit = async (ev) => {
     ev.preventDefault();
-    let guess = this.state.guess;
-
-    this.context.setGuess(guess);
-    LangService.postGuess(guess)
-    .then(feedback => {
-      this.context.setFeedback(feedback);
-      this.setState({correct: feedback.isCorrect})
-    }).then( () => this.setState({guess: ''}));
-
+    let guess = this.state.guess.toLowerCase();
+    await this.context.setGuess(guess);
+    let feedback = await LangService.postGuess(guess);
+    await this.context.setFeedback(feedback);
+    this.setState({guess: ''});
+    this.setState({correct: feedback.isCorrect})
     this.context.giveFeedback();
   }
 
@@ -43,8 +43,10 @@ class Learning extends React.Component {
       <div>
         <div className="infoArea">
           <div className="infoHeader">
-          <h2>Translate the word:</h2>
+            <div className="stack">
+              <h2>Translate the word:</h2>
               <span>{this.context.head.nextWord}</span>
+            </div>
               <br />
           </div>
           {!this.context.feedback && 
@@ -53,7 +55,7 @@ class Learning extends React.Component {
             <div className="guess">
               <form onSubmit={this.handleSubmit}>
                 <label htmlFor="learn-guess-input">What's the translation for this word?</label>
-                <input id="learn-guess-input" value={this.state.guess} onChange={this.changeGuess} type="text" required/>
+                <input id="learn-guess-input" value={this.state.guess} onChange={this.changeGuess} type="text" autocomplete="off" required/>
                 <button type="submit">Submit your answer</button>
               </form>
             </div>
@@ -63,8 +65,6 @@ class Learning extends React.Component {
         {this.context.feedback && <Feedback correct={this.state.correct}/>}
 
         </div>
-
-        <Stats />
       </div>
     )
   }

@@ -1,4 +1,4 @@
-.correct {
+.incorrect {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -7,9 +7,9 @@
     height: 100%;
   }
   
-  .correct p{
+  .incorrect p{
     text-align: center;
   }
-  .correct button {
+  .incorrect button {
     margin-top: 10px;
   }

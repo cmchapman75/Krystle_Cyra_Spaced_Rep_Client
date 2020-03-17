@@ -1,7 +1,7 @@
 import React from 'react';
 import config from '../config';
 import TokenService from '../services/token-service';
-import LangService from '../services/language-api-service';
+import LangService from '../services/lang-api-service';
 
 const ContentContext = React.createContext({
   error: null,
@@ -56,9 +56,6 @@ export class ContentProvider extends React.Component {
     } 
   }
 
-  // componentDidMount() {
-  //   this.setContext();
-  // }
 
   giveFeedback = () => {
     this.setState({feedback: true})
@@ -80,10 +77,10 @@ export class ContentProvider extends React.Component {
   getHead = () => {
     LangService.getHead().then((resData) => {
       this.setState({
-        head: resData
+      head: resData
       })
     });
-  }
+  } 
 
   setGuess = (guess) => {
     this.setState({
@@ -104,7 +101,6 @@ export class ContentProvider extends React.Component {
       words: resData.words
     }));
     this.getHead();
-    
   } 
   
   setFeedback = (resData) => {
@@ -131,7 +127,7 @@ export class ContentProvider extends React.Component {
       language: this.state.language,
       words: this.state.words,
       head: this.state.head,
-      setContext: this.setState,
+      setContext: this.setContext,
       getHead: this.getHead,
       nextWord: this.state.nextWord,
       giveFeedback: this.state.giveFeedback,

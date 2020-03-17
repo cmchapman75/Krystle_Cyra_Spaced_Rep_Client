@@ -19,10 +19,10 @@ class Correct extends React.Component {
     return(
       <div className="correct">
         <div className="DisplayScore">
-          <p>Your total score is: {this.context.feedbackRes.totalScore}</p>
+          <p>Total Score: {this.context.feedbackRes.totalScore}</p>
         </div>
 
-        <h3>You were correct! :D</h3>
+        <h3>Yay! You were correct! :D</h3>
         <div className="DisplayFeedback">
         <p>The correct translation for <strong>{this.context.head.nextWord}</strong> was <strong>{this.context.feedbackRes.answer}</strong> and you chose <strong>{this.context.guess}</strong>!</p>
         </div>
