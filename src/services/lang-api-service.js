@@ -3,7 +3,7 @@ import TokenService from './token-service'
 
 const LangService = {
   getLang: () => {
-    return fetch(`${config.API_ENDPOINT}/language`, {
+    return fetch(`${config.API_ENDPOINT}api/language`, {
       method: 'GET',
       headers: {
         'content-type':'application/json',
@@ -14,7 +14,7 @@ const LangService = {
     .then(response => response);
   },
   getHead: () => {
-    return fetch(`${config.API_ENDPOINT}/language/head`, {
+    return fetch(`${config.API_ENDPOINT}api/language/head`, {
       method: 'GET',
       headers: {
         'content-type':'applicatopn/json',
@@ -25,7 +25,7 @@ const LangService = {
     .then(head => head);
   },
   postGuess: (guess) => {
-    return fetch(`${config.API_ENDPOINT}/language/guess`, {
+    return fetch(`${config.API_ENDPOINT}api/language/guess`, {
       method: 'POST',
       headers: {
         'content-type':'application/json',
