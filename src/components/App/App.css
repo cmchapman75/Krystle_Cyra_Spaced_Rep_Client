@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #F35831;
+  background-color: #006400;
   font-family: 'Roboto';
 }
 
@@ -75,7 +75,7 @@ a:visited {
   margin: 0;
   padding: 7px 15px;
   border-radius: 4px 0 0 4px;
-  color: #F35831;
+  color: #006400;
   background-color: #f7f7f7;
   font-size: 0.9em;
   line-height: 1.9em;
