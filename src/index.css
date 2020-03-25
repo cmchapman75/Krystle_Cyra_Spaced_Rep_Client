@@ -15,3 +15,15 @@ body {
 :root {
   --font-size: calc(10px + 1vmin);
 }
+
+@media screen and (min-width:320px) {
+  body {
+  
+  }
+  }
+  
+  @media screen and (max-width:780px) {
+  body {
+
+  }
+  }
