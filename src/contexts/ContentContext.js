@@ -110,7 +110,7 @@ export class ContentProvider extends React.Component {
   }
 
   getLanguage = () => {
-    return fetch(`${config.API_ENDPOINT}/language`, {
+    return fetch(`${config.API_ENDPOINT}api/language`, {
       method: 'GET',
       headers: {
         'content-type':'application/json',
