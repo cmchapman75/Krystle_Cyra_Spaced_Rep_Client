@@ -32,12 +32,13 @@ class Dashboard extends React.Component {
  static contextType = ContentContext
 
   render(){
+    console.log(this.context.language);
     return(
       <div className="dashboardContainer">
 
         <h2>Welcome back, {this.props.user.user.name || 'placeholder'}!
         <br />
-        Language: {(this.context.language.name !== undefined && this.context.language.name) || 'placeholder'}
+        Language: {this.context.language.name ? this.context.language.name : 'placeholder'}
         <br />
         Total correct answers: {this.context.head.totalScore || '0'} </h2>
 
