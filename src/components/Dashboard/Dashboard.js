@@ -43,7 +43,7 @@ class Dashboard extends React.Component {
         Total correct answers: {this.context.head.totalScore || '0'} </h2>
 
         <Link to='/learn'>
-        <button onClick={this.noFeedback}>Start practicing</button>
+        <button aria-label="start practicing" onClick={this.noFeedback}>Start practicing</button>
           </Link>
         <div className="infoArea">
           <div className="infoHeader"><h3>Words to practice</h3></div>

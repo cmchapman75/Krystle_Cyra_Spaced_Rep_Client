@@ -52,7 +52,7 @@ class LoginForm extends Component {
           {error && <p>{error}</p>}
         </div>
         <div className="regEntryFields">
-          <Label htmlFor='login-username-input'>
+          <Label  aria-label="username" htmlFor='login-username-input'>
             Username
           </Label>
           <Input
@@ -63,7 +63,7 @@ class LoginForm extends Component {
           />
         </div>
         <div className="regEntryFields">
-          <Label htmlFor='login-password-input'>
+          <Label  aria-label="password" htmlFor='login-password-input'>
             Password
           </Label>
           <Input
@@ -73,12 +73,12 @@ class LoginForm extends Component {
             required
           />
         </div>
-        <Button type='submit'>
+        <Button aria-label="submit" type='submit'>
           Login
         </Button>
         <br />
           {' '}
-        <Link to='/register'>New learner? Sign up here!</Link>
+        <Link aria-label="new user" to='/register'>New learner? Sign up here!</Link>
       </form>
     )
   }

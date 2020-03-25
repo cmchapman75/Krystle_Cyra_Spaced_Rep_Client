@@ -22,13 +22,13 @@ class Correct extends React.Component {
           <p>Total Score: {this.context.feedbackRes.totalScore}</p>
         </div>
 
-        <h3>Yay! You were correct! :D</h3>
+        <h3 aria-label="You are correct">Yay! You were correct! :D</h3>
         <div className="DisplayFeedback">
         <p>The correct translation for <strong>{this.context.head.nextWord}</strong> was <strong>{this.context.feedbackRes.answer}</strong> and you chose <strong>{this.context.guess}</strong>!</p>
         </div>
         
 
-        <button onClick={this.handleNext}>Try another word!</button>
+        <button aria-label="try another word" onClick={this.handleNext}>Try another word!</button>
       </div>
     )
   }

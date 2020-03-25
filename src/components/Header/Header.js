@@ -42,7 +42,7 @@ class Header extends Component {
     return (
       <header>
         <h1>
-          <Link className="app-name" to='/'>
+          <Link className="app-name" to='/' alt="Espanolingo">
             Espanolingo
           </Link>
         </h1>
