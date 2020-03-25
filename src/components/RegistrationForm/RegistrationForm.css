@@ -1,6 +1,6 @@
 .textButton{
     background-color: #dce3e9;
-    color: #732A17;
+    color: rgb(4, 63, 4);
     border: 1px solid #0A0908; 
     border-radius: 3px;
     padding: 6px 12px 6px 12px;
@@ -24,7 +24,7 @@
   .alreadyAccountLink{
     margin-top: 1.75em;
     font-size: 0.9em;
-    color: #732A17 !important;
+    color: rgb(241, 241, 185);
     text-align: right;
   }
   

@@ -10,7 +10,7 @@
   
   form {
     font-size: 1.2em;
-    background-color: #006400;
+    background-color: #94d494;
     display: flex;
   }
   
@@ -26,7 +26,7 @@
   .guess input {
     height: 20vh;
     width: 100%;
-    background-color: #006400;
+    background-color: #9bce9b;
     text-align: center;
     font-size: 3em;
   }

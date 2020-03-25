@@ -14,7 +14,7 @@ class Header extends Component {
   renderLogoutLink() {
     return (
       <div>
-        <span>
+        <span className="user-name">
           {this.context.user.name}
         </span>
         <nav>
@@ -42,7 +42,7 @@ class Header extends Component {
     return (
       <header>
         <h1>
-          <Link to='/'>
+          <Link className="app-name" to='/'>
             Espanolingo
           </Link>
         </h1>
